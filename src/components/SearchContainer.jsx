@@ -1,36 +1,31 @@
-// SearchContainer.jsx
 import React, { useState } from 'react';
 
 const SearchContainer = ({ onSelectSymbol }) => {
-    const [companies] = useState([
-        { name: 'Apple', symbol: 'AAPL' },
-        { name: 'Microsoft', symbol: 'MSFT' },
-        { name: 'Amazon', symbol: 'AMZN' },
-        { name: 'Alphabet', symbol: 'GOOGL' },
-        { name: 'Facebook', symbol: 'FB' },
-        { name: 'Tesla', symbol: 'TSLA' },
-        { name: 'NVIDIA', symbol: 'NVDA' },
-        { name: 'Netflix', symbol: 'NFLX' },
-        { name: 'Intel', symbol: 'INTC' },
-        { name: 'AMD', symbol: 'AMD' },
-        { name: 'PayPal', symbol: 'PYPL' },
-        { name: 'Square', symbol: 'SQ' },
-        { name: 'Adobe', symbol: 'ADBE' },
-        { name: 'Salesforce', symbol: 'CRM' },
-        { name: 'Cisco', symbol: 'CSCO' },
-        { name: 'IBM', symbol: 'IBM' },
-        { name: 'Oracle', symbol: 'ORCL' },
-        { name: 'Twitter', symbol: 'TWTR' },
-        { name: 'Snapchat', symbol: 'SNAP' },
-        { name: 'Shopify', symbol: 'SHOP' },
-        { name: 'Uber', symbol: 'UBER' },
-        { name: 'Lyft', symbol: 'LYFT' },
-      ]);
-      
+  const [companies] = useState([
+    { name: 'Apple', symbol: 'AAPL', database: 'Apple' },
+    { name: 'Microsoft', symbol: 'MSFT', database: 'Microsoft' },
+    { name: 'Amazon', symbol: 'AMZN', database: 'Amazon' },
+    { name: 'Google', symbol: 'GOOGL', database: 'Google' },
+    { name: 'Tesla', symbol: 'TSLA', database: 'Tesla' },
+    { name: 'NVIDIA', symbol: 'NVDA', database: 'Nvidia' },
+    { name: 'Netflix', symbol: 'NFLX', database: 'Netflix' },
+    { name: 'Intel', symbol: 'INTC', database: 'Intel' },
+    { name: 'AMD', symbol: 'AMD', database: 'Amd' },
+    { name: 'PayPal', symbol: 'PYPL' },
+    { name: 'Adobe', symbol: 'ADBE' },
+    { name: 'Cisco', symbol: 'CSCO' },
+    { name: 'IBM', symbol: 'IBM' },
+    { name: 'Oracle', symbol: 'ORCL' },
+    { name: 'Twitter', symbol: 'TWTR' },
+    { name: 'Snapchat', symbol: 'SNAP' },
+    { name: 'Shopify', symbol: 'SHOP' },
+    { name: 'Uber', symbol: 'UBER' },
+    { name: 'Lyft', symbol: 'LYFT' },
+  ]);
 
-
-  const handleSelectCompany = (symbol) => {
-    onSelectSymbol(symbol); // Pass selected symbol to parent component
+  const handleSelectCompany = (database) => {
+    console.log(`Selected company database: ${database}`);
+    onSelectSymbol(database); // Pass selected company's database name to parent component
   };
 
   return (
@@ -38,7 +33,7 @@ const SearchContainer = ({ onSelectSymbol }) => {
       <h2>Company List</h2>
       <div>
         {companies.map((company) => (
-          <button key={company.symbol} onClick={() => handleSelectCompany(company.symbol)}>
+          <button key={company.symbol} onClick={() => handleSelectCompany(company.database)}>
             {company.name}
           </button>
         ))}
