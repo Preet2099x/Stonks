@@ -12,7 +12,7 @@ const Fetch = ({ symbol }) => {
       const apiKey = 'wyDUNN3APmscdUfDkXMUaGR865UQk35G'; // Replace with your Polygon.io API key
       const today = new Date().toISOString().slice(0, 10); // Get today's date (YYYY-MM-DD)
       const oneYearAgo = new Date(new Date().setFullYear(new Date().getFullYear() - 1)).toISOString().slice(0, 10); // Get date one year ago
-      const url = `https://api.polygon.io/v2/aggs/ticker/${symbol}/range/1/day/${oneYearAgo}/${today}?apiKey=${apiKey}`;
+      const url = `https://api.polygon.io/v2/aggs/ticker/UBER/range/1/day/${oneYearAgo}/${today}?apiKey=${apiKey}`;
 
       try {
         const response = await axios.get(url);

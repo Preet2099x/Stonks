@@ -11,16 +11,12 @@ const SearchContainer = ({ onSelectSymbol }) => {
     { name: 'Netflix', symbol: 'NFLX', database: 'Netflix' },
     { name: 'Intel', symbol: 'INTC', database: 'Intel' },
     { name: 'AMD', symbol: 'AMD', database: 'Amd' },
-    { name: 'PayPal', symbol: 'PYPL' },
-    { name: 'Adobe', symbol: 'ADBE' },
-    { name: 'Cisco', symbol: 'CSCO' },
-    { name: 'IBM', symbol: 'IBM' },
-    { name: 'Oracle', symbol: 'ORCL' },
-    { name: 'Twitter', symbol: 'TWTR' },
-    { name: 'Snapchat', symbol: 'SNAP' },
-    { name: 'Shopify', symbol: 'SHOP' },
-    { name: 'Uber', symbol: 'UBER' },
-    { name: 'Lyft', symbol: 'LYFT' },
+    { name: 'PayPal', symbol: 'PYPL', database: 'Paypal' },
+    { name: 'Adobe', symbol: 'ADBE', database: 'Adobe' },
+    { name: 'Cisco', symbol: 'CSCO', database: 'Cisco' },
+    { name: 'IBM', symbol: 'IBM', database: 'Ibm' },
+    { name: 'Oracle', symbol: 'ORCL', database: 'Oracle' },
+    { name: 'Uber', symbol: 'UBER', database: 'Uber' },
   ]);
 
   const handleSelectCompany = (database) => {

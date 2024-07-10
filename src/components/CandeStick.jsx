@@ -58,7 +58,6 @@ const CandleStick = ({ database }) => {
 
   return (
     <div id="chart">
-      {/* Chart will be rendered here */}
     </div>
   );
 };
