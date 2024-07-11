@@ -1,20 +1,27 @@
 import React from 'react'
+import './CompanyInfo.scss'
 
 const CompanyInfo = () => {
   return (
-    <div className='infoWrapper'>
-        <h1 className='companyName'>{name}</h1>
-        <div className='infoContainer'>
-            <pre className='div1'>
-                Opening Price: {o}
-                Closing Price: {c}
-                Volume Traded: {v}
-            </pre>
-            <pre className='div2'>
-                Highest Price: {h}
-                Lowest Price: {l}
-                Total Number of Trades: {n}
-            </pre>
+    <div className='infoContainer'>
+        <h3 className='companyName'>Name</h3>
+        <div className="bottom">
+          <div className='infoWrapper'>
+              <div className='div1'>
+                <p>Opening Price:</p>
+                <p>Closing Price:</p>
+                <p>Volume Traded:</p>
+              </div>
+              <div className='div2'>
+                <p>Highest Price:</p>
+                <p>Lowest Price:</p>
+                <p>Total Number of Trades:</p>  
+              </div>
+          </div>
+          <div className="companyAbout">
+            <h3>About</h3>
+            <p></p>
+          </div>
         </div>
     </div>
   )

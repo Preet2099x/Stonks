@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SearchContainer from './components/SearchContainer';
 import CandleStick from './components/CandeStick';
+import CompanyInfo from './components/CompanyInfo';
 // import Fetch from './Fetch'
 
 const App = () => {
@@ -14,8 +15,9 @@ const App = () => {
   return (
     <div>
       <h1>Stock Analysis App</h1>
-      <SearchContainer onSelectSymbol={handleSelectSymbol} />
-      {selectedCompany && <CandleStick database={selectedCompany} />}
+      {/* <SearchContainer onSelectSymbol={handleSelectSymbol} /> */}
+      <CompanyInfo/>
+      {/* {selectedCompany && <CandleStick database={selectedCompany} />} */}
       {/* <Fetch/> */}
     </div>
   );
