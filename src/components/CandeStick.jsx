@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import ApexCharts from 'apexcharts';
+import './CandleStick.scss'
 
 const CandleStick = ({ database }) => {
   console.log(`Page 3: ${database}`)
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Importing the JSON file (assuming it's in the data folder)
+        // Importing the JSON file 
         const data = await import(`../data/${database}.json`);
         const jsonData = data.default; // Accessing the default export from JSON file
 
@@ -23,7 +24,7 @@ const CandleStick = ({ database }) => {
           }],
           chart: {
             type: 'candlestick',
-            height: 350,
+            height: 450,
             id: 'candlestick-chart'
           },
           title: {
@@ -57,7 +58,9 @@ const CandleStick = ({ database }) => {
   }, [database]); // Run useEffect whenever database prop changes
 
   return (
-    <div id="chart">
+    <div className='chartContainer'>
+      <div id="chart">
+      </div>
     </div>
   );
 };

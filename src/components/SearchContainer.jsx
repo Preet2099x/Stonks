@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SearchContainer.scss';
 
 const SearchContainer = ({ onSelectSymbol }) => {
   const [companies] = useState([
@@ -19,17 +20,37 @@ const SearchContainer = ({ onSelectSymbol }) => {
     { name: 'Uber', symbol: 'UBER', database: 'Uber' },
   ]);
 
+  const [searchTerm, setSearchTerm] = useState('');
+
   const handleSelectCompany = (database) => {
     console.log(`Selected company database: ${database}`);
     onSelectSymbol(database); // Pass selected company's database name to parent component
   };
 
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredCompanies = companies.filter((company) =>
+    company.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div>
-      <h2>Company List</h2>
-      <div>
-        {companies.map((company) => (
-          <button key={company.symbol} onClick={() => handleSelectCompany(company.database)}>
+    <div className='SearchContainer'>
+      <input
+        type="search"
+        placeholder='Search Company Name'
+        className='searchBar'
+        value={searchTerm}
+        onChange={handleSearchChange}
+      />
+      <div className='buttonContainer'>
+        {filteredCompanies.map((company) => (
+          <button 
+            className='buttons' 
+            key={company.symbol} 
+            onClick={() => handleSelectCompany(company.database)}
+          >
             {company.name}
           </button>
         ))}
