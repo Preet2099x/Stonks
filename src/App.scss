@@ -7,10 +7,12 @@
   display: flex;
 
   .left {
+    margin-top: 10px;
     flex: 1; /* Take up remaining space */
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
 
     .graph {
       /* Your graph styles */
@@ -24,7 +26,7 @@
   .search {
     width: 300px;
     position: sticky;
-    top: 20px; /* Adjust this value to position vertically */
+    top: 20px; 
     align-self: flex-start; /* Align to the top of the main container */
   }
 }
