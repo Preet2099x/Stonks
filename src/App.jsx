@@ -22,29 +22,35 @@ const App = () => {
 
 
   return (
-    <div className="main">
+    <div className="container">
+      <div className="header">
+        <h1>STOCK ANALYSIS APP</h1>
+      </div>
+      <div className="main">
 
-      <div className="left">
+        <div className="left">
 
-        <div className="graph">
-          {selectedCompany && <CandleStick database={selectedCompany} />}
+          <div className="graph">
+            {selectedCompany && <CandleStick database={selectedCompany} />}
+          </div>
+
+          <div className="info">
+            {companyDetails.name && (
+            <CompanyInfo 
+            name={companyDetails.name} 
+            about={companyDetails.about} 
+            database={companyDetails.database} 
+              />
+            )}
+          </div>
+          
         </div>
 
-        <div className="info">
-          {companyDetails.name && (
-          <CompanyInfo 
-          name={companyDetails.name} 
-          about={companyDetails.about} 
-          database={companyDetails.database} 
-            />
-          )}
+        <div className="search">
+          <SearchContainer onSelectSymbol={handleSelectSymbol} onSelectCompany={handleSelectCompany} />
         </div>
-        
       </div>
 
-      <div className="search">
-        <SearchContainer onSelectSymbol={handleSelectSymbol} onSelectCompany={handleSelectCompany} />
-      </div>
     </div>
   );
 };
