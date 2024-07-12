@@ -1,12 +1,52 @@
-.SearchContainer{
-    width: 400px;
-    .searchBar{
-        width: 100%;
-        height: 40px;
-    }
-    .buttonContainer{
-        display: flex;
-        flex-direction: column;
+// SearchContainer.scss
 
+.SearchContainer {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  
+    .searchBar {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+  
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+      }
     }
-}
+  
+    .buttonContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .buttons {
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+  
+      &:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+      }
+  
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+  

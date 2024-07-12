@@ -1,0 +1,30 @@
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+
+  .left {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .graph {
+      /* Your graph styles */
+    }
+
+    .info {
+      /* Your info styles */
+    }
+  }
+
+  .search {
+    width: 300px;
+    position: sticky;
+    top: 20px; /* Adjust this value to position vertically */
+    align-self: flex-start; /* Align to the top of the main container */
+  }
+}

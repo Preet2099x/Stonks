@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SearchContainer from './components/SearchContainer';
 import CandleStick from './components/CandeStick';
 import CompanyInfo from './components/CompanyInfo';
+import './App.scss'
 // import Fetch from './Fetch'
 
 const App = () => {
@@ -19,19 +20,31 @@ const App = () => {
     setCompanyDetails({ name, about, database });
   };
 
+
   return (
-    <div>
-      <h1>Stock Analysis App</h1>
-      <SearchContainer onSelectSymbol={handleSelectSymbol} onSelectCompany={handleSelectCompany} />
-      {companyDetails.name && (
-        <CompanyInfo 
+    <div className="main">
+
+      <div className="left">
+
+        <div className="graph">
+          {selectedCompany && <CandleStick database={selectedCompany} />}
+        </div>
+
+        <div className="info">
+          {companyDetails.name && (
+          <CompanyInfo 
           name={companyDetails.name} 
           about={companyDetails.about} 
           database={companyDetails.database} 
-        />
-      )}
-      {selectedCompany && <CandleStick database={selectedCompany} />}
-      {/* <Fetch/> */}
+            />
+          )}
+        </div>
+        
+      </div>
+
+      <div className="search">
+        <SearchContainer onSelectSymbol={handleSelectSymbol} onSelectCompany={handleSelectCompany} />
+      </div>
     </div>
   );
 };
