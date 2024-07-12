@@ -99,12 +99,12 @@ const SearchContainer = ({ onSelectSymbol, onSelectCompany }) => {
 
   const handleSelectCompanyDetails = (company) => {
     console.log(`Selected company: ${company.database}, ${company.name}, ${company.about}`);
-    onSelectCompany(company.database, company.name, company.about); // Pass selected company's data to parent component
+    onSelectCompany(company.database, company.name, company.about); 
   };
 
   const handleSelectCompany = (database) => {
     console.log(`Selected company database: ${database}`);
-    onSelectSymbol(database); // Pass selected company's database name to parent component
+    onSelectSymbol(database); 
   };
 
   const handleSearchChange = (event) => {

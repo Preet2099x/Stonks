@@ -45,7 +45,6 @@ const CandleStick = ({ database }) => {
         const chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
 
-        // Clean up chart on component unmount
         return () => {
           chart.destroy();
         };
@@ -55,7 +54,7 @@ const CandleStick = ({ database }) => {
     };
 
     fetchData();
-  }, [database]); // Run useEffect whenever database prop changes
+  }, [database]); 
 
   return (
     <div className='chartContainer'>

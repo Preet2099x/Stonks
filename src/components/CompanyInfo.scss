@@ -9,7 +9,6 @@
     height: 500px;
     box-shadow: 0 4px 8px rgba(5, 5, 214, 0.1);
 
-
     .companyName{
         font-size: 30px;
         display: flex;
@@ -17,17 +16,16 @@
         justify-content: center;
         margin-top: 3px;
         margin-bottom: 30px;
-        
     }
     .bottom{
         display: flex;
         flex-direction: column;
+
         .infoWrapper{
             display: flex;
             align-items: center;
             justify-content: center;
             border: 2px solid #74B9FF;
-            // padding: 10px;
             height: 250px;
             border-radius: 10px;
             gap: 230px;
@@ -36,15 +34,12 @@
             margin: 10px;
             font-size: 22px;
             font-weight: 600;
-            // background-color: #8a9fde;
             margin-left: 35px;
             box-shadow: 4px 5px 54px rgba(5, 5, 214, 0.1);
-
 
             p{
                 padding-top: 20px;
             }
-
         }
         .companyAbout{
             margin-top: -15px;

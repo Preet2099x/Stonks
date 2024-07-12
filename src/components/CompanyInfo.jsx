@@ -8,7 +8,7 @@ const CompanyInfo = ({ name, about, database }) => {
     const fetchData = async () => {
       try {
         const data = await import(`../data/${database}.json`);
-        // Assuming `data.default` is an array, set the first element to state
+        
         if (Array.isArray(data.default) && data.default.length > 0) {
           setJsonData(data.default[0]);
         }
